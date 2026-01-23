@@ -1,0 +1,8 @@
+{
+  "name": "Chatbot",
+  "description": "A secure, Valentine-themed AI chat application with robust features.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
