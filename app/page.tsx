@@ -67,26 +67,26 @@ export default function Home() {
     {
       icon: Globe,
       label: 'Website',
-      value: 'muthunughty420.wixsite.com/reckonprojectcente-5',
+      value: 'muthunughty420.wixsite.com',
       link: 'https://muthunughty420.wixsite.com/reckonprojectcente-5',
     },
     {
       icon: Instagram,
       label: 'Instagram',
       value: 'Reckon Project Center',
-      link: 'https://instagram.com',
+      link: 'https://instagram.com/search?q=reckonprojectcenter',
     },
     {
       icon: Youtube,
       label: 'YouTube',
       value: 'RECKON PROJECT CENTRE',
-      link: 'https://youtube.com',
+      link: 'https://youtube.com/search?query=RECKON+PROJECT+CENTRE',
     },
     {
       icon: MessageCircle,
       label: 'WhatsApp',
       value: 'Reckon Project Center',
-      link: 'https://wa.me/7010483491',
+      link: 'https://wa.me/917010483491',
     },
   ]
 
@@ -309,13 +309,18 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://instagram.com" className="hover:text-white transition-colors">
+                  <a href="https://instagram.com/search?q=reckonprojectcenter" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     Instagram
                   </a>
                 </li>
                 <li>
-                  <a href="https://youtube.com" className="hover:text-white transition-colors">
+                  <a href="https://youtube.com/search?query=RECKON+PROJECT+CENTRE" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     YouTube Channel
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/917010483491" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    WhatsApp
                   </a>
                 </li>
               </ul>
