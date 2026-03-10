@@ -266,7 +266,7 @@ export default function Home() {
               variant="outline"
               className="border-white text-white hover:bg-white/10 px-8 py-6 text-base font-semibold"
             >
-              <a href="https://wa.me/7010483491">WhatsApp Us</a>
+              <a href="https://wa.me/917010483491">WhatsApp Us</a>
             </Button>
           </div>
 
