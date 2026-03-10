@@ -34,19 +34,19 @@ export default function Home() {
     {
       title: 'School Projects',
       description: 'Complete Project Solutions',
-      image: '/projects-work.jpg',
+      image: '/school-projects.jpg',
       icon: '🔧',
     },
     {
       title: 'Mini & Main Projects',
       description: 'Technical Implementation Support',
-      image: '/projects-work.jpg',
+      image: '/mini-main-projects.jpg',
       icon: '⚙️',
     },
     {
       title: 'Documentation & PPT',
       description: 'Report Writing & Professional Presentation',
-      image: '/publishing-papers.jpg',
+      image: '/documentation-ppt.jpg',
       icon: '📝',
     },
     {
