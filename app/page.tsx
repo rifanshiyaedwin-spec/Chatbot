@@ -1,12 +1,16 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { Phone, Globe, Instagram, Youtube, MessageCircle, ArrowRight } from 'lucide-react'
+import { Phone, Globe, Instagram, Youtube, MessageCircle, ArrowRight, Mail } from 'lucide-react'
+import { ContactForm } from '@/components/contact-form'
 
 export default function Home() {
+  const router = useRouter()
   const [isVisible, setIsVisible] = useState(false)
+  const [contactFormOpen, setContactFormOpen] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
@@ -74,19 +78,19 @@ export default function Home() {
       icon: Instagram,
       label: 'Instagram',
       value: 'Reckon Project Center',
-      link: 'https://instagram.com',
+      link: 'https://instagram.com/reckon_project_center?igshid=MzRlODBiNWFlZA==',
     },
     {
       icon: Youtube,
       label: 'YouTube',
       value: 'RECKON PROJECT CENTRE',
-      link: 'https://youtube.com',
+      link: 'https://www.youtube.com/@RECKONPROJECTCENTRE',
     },
     {
       icon: MessageCircle,
       label: 'WhatsApp',
       value: 'Reckon Project Center',
-      link: 'https://wa.me/7010483491',
+      link: 'https://whatsapp.com/channel/0029VakiRVFKGGGNHPYsGR01',
     },
   ]
 
@@ -101,13 +105,13 @@ export default function Home() {
             </div>
             <span className="font-bold text-lg text-foreground hidden sm:inline">Reckon Project Center</span>
           </div>
-          <a
-            href="tel:7010483491"
+          <Button
+            onClick={() => router.push('/contact')}
             className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
           >
-            <Phone className="w-4 h-4" />
+            <Mail className="w-4 h-4" />
             <span className="hidden sm:inline">Contact Us</span>
-          </a>
+          </Button>
         </nav>
       </header>
 
@@ -132,11 +136,18 @@ export default function Home() {
                   Your trusted partner for academic excellence. We provide comprehensive project work, internship guidance, and professional tutoring for diploma and engineering students across all departments.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base">
+                  <Button
+                    onClick={() => router.push('/services')}
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base"
+                  >
                     Get Started
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
-                  <Button variant="outline" className="px-8 py-6 text-base">
+                  <Button
+                    variant="outline"
+                    className="px-8 py-6 text-base"
+                    onClick={() => router.push('/services')}
+                  >
                     Learn More
                   </Button>
                 </div>
@@ -165,7 +176,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 bg-white">
+      <section id="services" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Services</h2>
@@ -309,13 +320,18 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://instagram.com" className="hover:text-white transition-colors">
+                  <a href="https://instagram.com/reckon_project_center?igshid=MzRlODBiNWFlZA==" className="hover:text-white transition-colors">
                     Instagram
                   </a>
                 </li>
                 <li>
-                  <a href="https://youtube.com" className="hover:text-white transition-colors">
+                  <a href="https://www.youtube.com/@RECKONPROJECTCENTRE" className="hover:text-white transition-colors">
                     YouTube Channel
+                  </a>
+                </li>
+                <li>
+                  <a href="https://whatsapp.com/channel/0029VakiRVFKGGGNHPYsGR01" className="hover:text-white transition-colors">
+                    WhatsApp Channel
                   </a>
                 </li>
               </ul>
@@ -327,6 +343,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Contact Form Dialog */}
+      <ContactForm open={contactFormOpen} onOpenChange={setContactFormOpen} />
     </main>
   )
 }
