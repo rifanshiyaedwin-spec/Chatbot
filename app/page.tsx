@@ -106,7 +106,7 @@ export default function Home() {
             <span className="font-bold text-lg text-foreground hidden sm:inline">Reckon Project Center</span>
           </div>
           <Button
-            onClick={() => setContactFormOpen(true)}
+            onClick={() => router.push('/contact')}
             className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
           >
             <Mail className="w-4 h-4" />
