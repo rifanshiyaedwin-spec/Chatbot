@@ -1,12 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Phone, Globe, Instagram, Youtube, MessageCircle, ArrowRight, Mail } from 'lucide-react'
 import { ContactForm } from '@/components/contact-form'
 
 export default function Home() {
+  const router = useRouter()
   const [isVisible, setIsVisible] = useState(false)
   const [contactFormOpen, setContactFormOpen] = useState(false)
 
@@ -135,7 +137,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Button
-                    onClick={() => setContactFormOpen(true)}
+                    onClick={() => router.push('/services')}
                     className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base"
                   >
                     Get Started
@@ -144,10 +146,7 @@ export default function Home() {
                   <Button
                     variant="outline"
                     className="px-8 py-6 text-base"
-                    onClick={() => {
-                      const servicesSection = document.querySelector('[id="services"]') || document.querySelector('.bg-white')
-                      servicesSection?.scrollIntoView({ behavior: 'smooth' })
-                    }}
+                    onClick={() => router.push('/services')}
                   >
                     Learn More
                   </Button>
