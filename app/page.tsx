@@ -3,10 +3,12 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { Phone, Globe, Instagram, Youtube, MessageCircle, ArrowRight } from 'lucide-react'
+import { Phone, Globe, Instagram, Youtube, MessageCircle, ArrowRight, Mail } from 'lucide-react'
+import { ContactForm } from '@/components/contact-form'
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false)
+  const [contactFormOpen, setContactFormOpen] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
@@ -101,13 +103,13 @@ export default function Home() {
             </div>
             <span className="font-bold text-lg text-foreground hidden sm:inline">Reckon Project Center</span>
           </div>
-          <a
-            href="tel:7010483491"
+          <Button
+            onClick={() => setContactFormOpen(true)}
             className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
           >
-            <Phone className="w-4 h-4" />
+            <Mail className="w-4 h-4" />
             <span className="hidden sm:inline">Contact Us</span>
-          </a>
+          </Button>
         </nav>
       </header>
 
@@ -132,11 +134,21 @@ export default function Home() {
                   Your trusted partner for academic excellence. We provide comprehensive project work, internship guidance, and professional tutoring for diploma and engineering students across all departments.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base">
+                  <Button
+                    onClick={() => setContactFormOpen(true)}
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base"
+                  >
                     Get Started
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
-                  <Button variant="outline" className="px-8 py-6 text-base">
+                  <Button
+                    variant="outline"
+                    className="px-8 py-6 text-base"
+                    onClick={() => {
+                      const servicesSection = document.querySelector('[id="services"]') || document.querySelector('.bg-white')
+                      servicesSection?.scrollIntoView({ behavior: 'smooth' })
+                    }}
+                  >
                     Learn More
                   </Button>
                 </div>
@@ -165,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 bg-white">
+      <section id="services" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Services</h2>
@@ -332,6 +344,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Contact Form Dialog */}
+      <ContactForm open={contactFormOpen} onOpenChange={setContactFormOpen} />
     </main>
   )
 }
