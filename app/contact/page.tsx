@@ -19,16 +19,7 @@ export default function GetInTouchPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleBackClick = () => {
-    console.log('[v0] Back button clicked')
-    // Try to go back first
-    if (typeof window !== 'undefined' && window.history.length > 1) {
-      console.log('[v0] Browser history available, going back')
-      router.back()
-    } else {
-      // Fallback to home page if no history
-      console.log('[v0] No browser history, redirecting to home')
-      router.push('/')
-    }
+    router.push('/')
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
