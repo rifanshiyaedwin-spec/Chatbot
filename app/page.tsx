@@ -74,13 +74,13 @@ export default function Home() {
       icon: Instagram,
       label: 'Instagram',
       value: 'Reckon Project Center',
-      link: 'https://instagram.com',
+      link: 'https://instagram.com/reckon_project_center?igshid=MzRlODBiNWFlZA==',
     },
     {
       icon: Youtube,
       label: 'YouTube',
       value: 'RECKON PROJECT CENTRE',
-      link: 'https://youtube.com',
+      link: 'https://www.youtube.com/@RECKONPROJECTCENTRE',
     },
     {
       icon: MessageCircle,
@@ -309,12 +309,12 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://instagram.com" className="hover:text-white transition-colors">
+                  <a href="https://instagram.com/reckon_project_center?igshid=MzRlODBiNWFlZA==" className="hover:text-white transition-colors">
                     Instagram
                   </a>
                 </li>
                 <li>
-                  <a href="https://youtube.com" className="hover:text-white transition-colors">
+                  <a href="https://www.youtube.com/@RECKONPROJECTCENTRE" className="hover:text-white transition-colors">
                     YouTube Channel
                   </a>
                 </li>
