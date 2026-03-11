@@ -18,6 +18,19 @@ export default function GetInTouchPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  const handleBackClick = () => {
+    console.log('[v0] Back button clicked')
+    // Try to go back first
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      console.log('[v0] Browser history available, going back')
+      router.back()
+    } else {
+      // Fallback to home page if no history
+      console.log('[v0] No browser history, redirecting to home')
+      router.push('/')
+    }
+  }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -95,7 +108,7 @@ export default function GetInTouchPage() {
       <header className="sticky top-0 z-50 bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <button
-            onClick={() => router.back()}
+            onClick={handleBackClick}
             className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
