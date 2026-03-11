@@ -38,7 +38,7 @@ export function ContactForm({ open, onOpenChange }: ContactFormProps) {
 
     try {
       // Create mailto link with form data
-      const mailtoLink = `mailto:muthunughty@gmail.com?subject=${encodeURIComponent(
+      const mailtoLink = `mailto:reckonprojectcenter16072023@gmail.com?subject=${encodeURIComponent(
         formData.subject || 'Contact from Website'
       )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`

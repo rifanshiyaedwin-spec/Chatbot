@@ -32,7 +32,7 @@ export default function GetInTouchPage() {
 
     try {
       // Create mailto link with form data
-      const mailtoLink = `mailto:reckonprojectcenter@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:reckonprojectcenter16072023@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
       )}`
       window.location.href = mailtoLink
@@ -63,8 +63,8 @@ export default function GetInTouchPage() {
     {
       icon: Mail,
       title: 'Email Us',
-      description: 'reckonprojectcenter@gmail.com',
-      link: 'mailto:reckonprojectcenter@gmail.com',
+      description: 'reckonprojectcenter16072023@gmail.com',
+      link: 'mailto:reckonprojectcenter16072023@gmail.com',
       action: 'Email',
     },
     {
