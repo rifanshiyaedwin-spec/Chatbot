@@ -18,6 +18,10 @@ export default function GetInTouchPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  const handleBackClick = () => {
+    router.push('/')
+  }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -32,7 +36,7 @@ export default function GetInTouchPage() {
 
     try {
       // Create mailto link with form data
-      const mailtoLink = `mailto:reckonprojectcenter@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:reckonprojectcenter16072023@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
       )}`
       window.location.href = mailtoLink
@@ -63,8 +67,8 @@ export default function GetInTouchPage() {
     {
       icon: Mail,
       title: 'Email Us',
-      description: 'reckonprojectcenter@gmail.com',
-      link: 'mailto:reckonprojectcenter@gmail.com',
+      description: 'reckonprojectcenter16072023@gmail.com',
+      link: 'mailto:reckonprojectcenter16072023@gmail.com',
       action: 'Email',
     },
     {
@@ -95,7 +99,7 @@ export default function GetInTouchPage() {
       <header className="sticky top-0 z-50 bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <button
-            onClick={() => router.back()}
+            onClick={handleBackClick}
             className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
