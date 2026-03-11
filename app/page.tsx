@@ -86,7 +86,7 @@ export default function Home() {
       icon: MessageCircle,
       label: 'WhatsApp',
       value: 'Reckon Project Center',
-      link: 'https://wa.me/7010483491',
+      link: 'https://whatsapp.com/channel/0029VakiRVFKGGGNHPYsGR01',
     },
   ]
 
@@ -316,6 +316,11 @@ export default function Home() {
                 <li>
                   <a href="https://www.youtube.com/@RECKONPROJECTCENTRE" className="hover:text-white transition-colors">
                     YouTube Channel
+                  </a>
+                </li>
+                <li>
+                  <a href="https://whatsapp.com/channel/0029VakiRVFKGGGNHPYsGR01" className="hover:text-white transition-colors">
+                    WhatsApp Channel
                   </a>
                 </li>
               </ul>
