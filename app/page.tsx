@@ -160,7 +160,7 @@ export default function Home() {
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
               }`}
             >
-              <div className="relative h-96 md:h-full rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-96 md:h-[500px] lg:h-[550px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/hero-students.jpg"
                   alt="Students working on engineering projects"
