@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Mail } from 'lucide-react'
+import { ArrowRight, Mail, ArrowLeft } from 'lucide-react'
 import { ContactForm } from '@/components/contact-form'
 import Link from 'next/link'
 
@@ -60,12 +60,22 @@ export default function ServicesPage() {
       {/* Header/Navigation */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border shadow-sm">
         <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg">
-              R
-            </div>
-            <span className="font-bold text-lg text-foreground hidden sm:inline">Reckon Project Center</span>
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              <span className="hidden sm:inline">Back</span>
+            </Link>
+            <div className="h-6 w-px bg-border hidden sm:block" />
+            <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg">
+                R
+              </div>
+              <span className="font-bold text-lg text-foreground hidden sm:inline">Reckon Project Center</span>
+            </Link>
+          </div>
           <Button
             onClick={() => setContactFormOpen(true)}
             className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
