@@ -8,3 +8,18 @@ node_modules/
 .next/
 .env*.local
 .DS_Store
+dist/
+build/
+
+# Testing
+.coverage/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
