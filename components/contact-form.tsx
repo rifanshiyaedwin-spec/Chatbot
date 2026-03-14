@@ -55,7 +55,6 @@ export function ContactForm({ open, onOpenChange }: ContactFormProps) {
         onOpenChange(false)
       }, 2000)
     } catch (error) {
-      console.error('[v0] Contact form error:', error)
       setSubmitStatus('error')
       setTimeout(() => setSubmitStatus('idle'), 3000)
     } finally {
